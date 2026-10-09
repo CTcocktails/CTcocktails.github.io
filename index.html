@@ -51,6 +51,14 @@ header.top { display: flex; align-items: flex-end; justify-content: space-betwee
 .brand h1 { font-family: var(--f-display); font-weight: 700; font-size: clamp(2rem, 7vw, 2.9rem); line-height: 1; margin: 0; letter-spacing: -0.01em; }
 .brand h1 em { font-weight: 500; }
 .brand p { margin: 6px 0 0; color: var(--muted); font-size: .95rem; }
+header.top { position: relative; }
+.brand { padding-right: 56px; }
+.share { position: absolute; top: 0; right: 0; width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--line); background: var(--paper); color: var(--ink); display: grid; place-items: center; cursor: pointer; padding: 0; }
+.share svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.share:active { transform: scale(.94); }
+.toast { position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translate(-50%, 12px); background: var(--ink); color: var(--bg); padding: 10px 16px; border-radius: 999px; font-size: .9rem; font-weight: 700; opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; z-index: 50; }
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+@media (min-width: 760px) { .share { position: static; order: 3; width: 36px; height: 36px; margin-left: -4px; } .brand { padding-right: 0; margin-right: auto; } }
 
 .seg { display: inline-flex; background: var(--paper-2); border: 1px solid var(--line); border-radius: 999px; padding: 3px; }
 .seg button { border: 0; background: none; padding: 6px 12px; border-radius: 999px; cursor: pointer; font-size: .85rem; font-weight: 500; color: var(--muted); }
@@ -189,6 +197,7 @@ header.top { display: flex; align-items: flex-end; justify-content: space-betwee
       <h1>CT <em>Codex</em></h1>
       <p id="tagline">Cocktails for all feelings</p>
     </div>
+    <button class="share" id="share" aria-label="Share CT Codex"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3"/><path d="M7.5 7.5 12 3l4.5 4.5"/><path d="M8 11H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-2"/></svg></button>
     <div class="controls">
       <div class="seg" role="group" aria-label="Layout">
         <button id="v-deck" aria-pressed="true">Swipe</button>
@@ -8041,6 +8050,22 @@ function scrollByCard(dir){
   const step = c.length > 1 ? c[1].offsetLeft - c[0].offsetLeft : main.clientWidth;
   main.scrollBy({ left: dir * step, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
 }
+// Share: the phone's share sheet (Messages etc.), or copy the link where that isn't available.
+const SITE = "https://ctcocktails.github.io/";
+function toast(msg){
+  let t = $("#toast");
+  if (!t){ t = document.createElement("div"); t.id = "toast"; t.className = "toast"; t.setAttribute("role", "status"); document.body.appendChild(t); }
+  t.textContent = msg; t.classList.add("show");
+  clearTimeout(toast.timer); toast.timer = setTimeout(() => t.classList.remove("show"), 1800);
+}
+$("#share").addEventListener("click", async () => {
+  const data = { title: "CT Codex", text: "CT Codex: cocktails for all feelings", url: SITE };
+  if (navigator.share){
+    try { await navigator.share(data); return; } catch (e){ if (e && e.name === "AbortError") return; }
+  }
+  try { await navigator.clipboard.writeText(SITE); toast("Link copied"); }
+  catch { prompt("Copy this link:", SITE); }
+});
 $("#surprise").addEventListener("click", () => {
   // Cocktails only: prep and batch cards (bottle) never come up.
   const BOTTLE = new Set(DRINKS.filter(d => d.glass === "bottle").map(d => d.id));
