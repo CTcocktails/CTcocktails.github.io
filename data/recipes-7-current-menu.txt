@@ -81,6 +81,14 @@
 
 @ Gin
 
+* Pink Pony | collins | Shaken | Cubes |
+- 1 1/2 oz Gin
+- 1/2 oz Grenadine
+- 3/4 oz Ginger syrup
+- 1/2 oz Lime juice
+- Top Soda
+> Shake, strain over fresh ice in a collins glass and top with soda.
+
 * Summer Trip | coupe | Shaken (wet + dry) | | No garnish
 - 1 1/2 oz Monopolowa gin
 - 1/2 oz Covallo tomato gin
@@ -508,7 +516,7 @@
 - 750 ml Pisco
 - 250 ml Lillet Rouge
 
-* Pink Pony | bottle | Batch | |
+* Pink Pony Batch | bottle | Batch | |
 - 25 oz Gin
 - 8 oz Grenadine
 
