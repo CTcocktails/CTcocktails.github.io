@@ -143,7 +143,8 @@ header.top { position: relative; }
 .ing li { display: grid; grid-template-columns: 4.8em 1fr; gap: 10px; padding: 6px 0; border-bottom: 1px dashed var(--line); font-size: .95rem; }
 .ing li:last-child { border-bottom: 0; }
 .frac { font-family: var(--f-body); font-size: 1.35em; line-height: 1; vertical-align: -0.06em; margin: 0 .04em; }
-.amt { font-family: var(--f-mono); font-variant-numeric: tabular-nums; font-size: .86rem; color: var(--accent); white-space: nowrap; }
+.amt { font-family: var(--f-mono); font-variant-numeric: tabular-nums; font-size: .86rem; color: var(--accent); min-width: 0; line-height: 1.25; }
+.amt .q, .amt .u { white-space: nowrap; }
 .steps { margin: 0 0 14px; padding-left: 1.3em; font-size: .93rem; }
 .steps li { padding: 3px 0; }
 .tip { margin: -6px 0 14px; font-style: italic; font-size: .9rem; color: var(--muted); overflow-wrap: anywhere; }
@@ -156,6 +157,9 @@ header.top { position: relative; }
 .btn-quiet { border: 0; background: none; color: var(--muted); cursor: pointer; font-size: .85rem; display: inline-flex; align-items: center; gap: 6px; padding: 8px 10px; border-radius: 8px; }
 .btn-quiet:hover { background: var(--paper-2); color: var(--ink); }
 .foot-glass { color: var(--ink); font-weight: 700; }
+.card-share svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.back-head { padding-right: 52px; }
+.grid .back-head { padding-right: 38px; }
 .grid .foot-lead { display: none; }
 
 .check { border: 1px solid color-mix(in srgb, var(--danger) 45%, var(--line)); background: color-mix(in srgb, var(--danger) 7%, var(--paper)); border-radius: 10px; padding: 10px 12px; margin: 0 0 14px; }
@@ -7842,10 +7846,10 @@ function glassSVG(type, cls){
 
 // ---------- Amounts ----------
 const UNIT_WORDS = { oz:"oz", ounce:"oz", ounces:"oz", ml:"ml", dash:"dash", dashes:"dash", drop:"drop", drops:"drop",
-  barspoon:"barspoon", barspoons:"barspoon", bsp:"barspoon", tsp:"tsp", tbsp:"tbsp", leaf:"leaf", leaves:"leaf", pinch:"pinch",
+  barspoon:"bspn", barspoons:"bspn", bsp:"bspn", bspn:"bspn", tsp:"tsp", tbsp:"tbsp", leaf:"leaf", leaves:"leaf", pinch:"pinch",
   sleeve:"sleeve", sleeves:"sleeve", slice:"slice", slices:"slice", sprig:"sprig", sprigs:"sprig",
   cup:"cup", cups:"cup", g:"g", quart:"quart", quarts:"quart", liter:"liter", liters:"liter", lb:"lb", lbs:"lb", can:"can", cans:"can" };
-const PLURAL = { dash:"dashes", leaf:"leaves", pinch:"pinches", oz:"oz", ml:"ml", tsp:"tsp", tbsp:"tbsp", g:"g", lb:"lb" };
+const PLURAL = { bspn:"bspn", dash:"dashes", leaf:"leaves", pinch:"pinches", oz:"oz", ml:"ml", tsp:"tsp", tbsp:"tbsp", g:"g", lb:"lb" };
 const FRAC = { 0: "", 0.125: "⅛", 0.25: "¼", 0.375: "⅜", 0.5: "½", 0.625: "⅝", 0.75: "¾", 0.875: "⅞" };
 const VULGAR = { "¼": ".25", "½": ".5", "¾": ".75", "⅓": ".333", "⅔": ".667" };
 
@@ -7876,7 +7880,11 @@ function ozText(n){
   return (w ? w : (f ? "" : "0")) + f;
 }
 // Fraction glyphs render small in the mono face, so set them larger in the body face.
-function amtHTML(x){ return esc(amountText(x)).replace(/[¼½¾⅛⅜⅝⅞]/g, f => `<span class="frac">${f}</span>`); }
+function amtHTML(x){
+  const t = amountText(x), sp = t.indexOf(" ");
+  const fr = v => esc(v).replace(/[¼½¾⅛⅜⅝⅞]/g, f => `<span class="frac">${f}</span>`);
+  return sp < 0 ? `<span class="q">${fr(t)}</span>` : `<span class="q">${fr(t.slice(0, sp))}</span> <span class="u">${fr(t.slice(sp + 1))}</span>`;
+}
 function amountText(x){
   if (x.word) return x.word;
   if (x.raw) return x.raw;
@@ -7897,6 +7905,7 @@ const favKey = r => r.name.toLowerCase() + (r.version && r.version !== "A" ? "#"
 
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const ICON_SHARE = `<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3"/><path d="M7.5 7.5 12 3l4.5 4.5"/><path d="M8 11H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-2"/></svg>`;
 const ICON_FLIP = `<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/></svg>`;
 
 const slug = t => String(t).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
@@ -7959,6 +7968,7 @@ function cardHTML(r){
         </div>
       </div>
       <div class="face back" data-flip>
+        <button class="fav card-share" data-share aria-label="Share ${esc(r.name)}">${ICON_SHARE}</button>
         <div class="back-head">${glassSVG(r.glass, "mini")}<div class="t"><h3>${esc(r.name)}</h3><div class="sub">${r.version ? `<span class="ver">${vText(r)}</span> ` : ""}${esc(r.section)}</div></div></div>
         <div class="back-body">
           ${r.method === "Batch" ? `<p class="note">Batch recipe, per liter unless noted.</p>` : ""}
@@ -8039,6 +8049,11 @@ $("#cards").addEventListener("click", e => {
     if (state.section === FAV) render();
     return;
   }
+  if (e.target.closest("[data-share]")){
+    const r = DRINKS.find(d => d.id === card.dataset.id);
+    shareLink({ title: r.name, text: `${r.name} on CT Codex`, url: SITE + "#" + r.id });
+    return;
+  }
   if (!e.target.closest("[data-flip]")) return;
   card.classList.toggle("flipped");
   card.classList.contains("flipped") ? state.flipped.add(card.dataset.id) : state.flipped.delete(card.dataset.id);
@@ -8060,14 +8075,14 @@ function toast(msg){
   t.textContent = msg; t.classList.add("show");
   clearTimeout(toast.timer); toast.timer = setTimeout(() => t.classList.remove("show"), 1800);
 }
-$("#share").addEventListener("click", async () => {
-  const data = { title: "CT Codex", text: "CT Codex: cocktails for all feelings", url: SITE };
+async function shareLink(data){
   if (navigator.share){
     try { await navigator.share(data); return; } catch (e){ if (e && e.name === "AbortError") return; }
   }
-  try { await navigator.clipboard.writeText(SITE); toast("Link copied"); }
-  catch { prompt("Copy this link:", SITE); }
-});
+  try { await navigator.clipboard.writeText(data.url); toast("Link copied"); }
+  catch { prompt("Copy this link:", data.url); }
+}
+$("#share").addEventListener("click", () => shareLink({ title: "CT Codex", text: "CT Codex: cocktails for all feelings", url: SITE }));
 $("#surprise").addEventListener("click", () => {
   // Cocktails only: prep and batch cards (bottle) never come up.
   const BOTTLE = new Set(DRINKS.filter(d => d.glass === "bottle").map(d => d.id));
@@ -8077,8 +8092,10 @@ $("#surprise").addEventListener("click", () => {
     state.q = ""; $("#q").value = ""; state.section = "All"; renderChips(); render();
     cards = pool();
   }
-  const card = cards[Math.floor(Math.random() * cards.length)];
-  const smooth = matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+  showCard(cards[Math.floor(Math.random() * cards.length)]);
+});
+function showCard(card, instant){
+  const smooth = instant || matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
   document.querySelectorAll(".card.picked").forEach(c => c.classList.remove("picked"));
   card.classList.add("picked");
   if (state.view === "deck"){
@@ -8088,7 +8105,17 @@ $("#surprise").addEventListener("click", () => {
   } else {
     card.scrollIntoView({ block: "center", behavior: smooth });
   }
-});
+}
+// A shared link (…/#drink-id) opens straight to that card, flipped to the spec.
+function openFromHash(){
+  const id = decodeURIComponent(location.hash.slice(1));
+  if (!id || !DRINKS.some(d => d.id === id)) return;
+  state.q = ""; $("#q").value = ""; state.section = "All";
+  state.flipped.add(id); renderChips(); render();
+  const card = $("#cards").querySelector(`.card[data-id="${CSS.escape(id)}"]`);
+  if (card) requestAnimationFrame(() => showCard(card, true));
+}
+window.addEventListener("hashchange", openFromHash);
 $("#prev").addEventListener("click", () => scrollByCard(-1));
 $("#next").addEventListener("click", () => scrollByCard(1));
 
@@ -8096,6 +8123,7 @@ setPressed("#v-deck", "#v-grid", state.view === "deck");
 setPressed("#u-oz", "#u-ml", state.unit === "oz");
 renderChips();
 render();
+openFromHash();
 </script>
 
 </body>
