@@ -137,6 +137,8 @@ header.top { position: relative; }
 .back-foot { padding: 8px 12px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; }
 .btn-quiet { border: 0; background: none; color: var(--muted); cursor: pointer; font-size: .85rem; display: inline-flex; align-items: center; gap: 6px; padding: 8px 10px; border-radius: 8px; }
 .btn-quiet:hover { background: var(--paper-2); color: var(--ink); }
+.foot-glass { color: var(--ink); font-weight: 700; }
+.grid .foot-lead { display: none; }
 
 .check { border: 1px solid color-mix(in srgb, var(--danger) 45%, var(--line)); background: color-mix(in srgb, var(--danger) 7%, var(--paper)); border-radius: 10px; padding: 10px 12px; margin: 0 0 14px; }
 .check .label { color: var(--danger); }
@@ -7950,7 +7952,7 @@ function cardHTML(r){
           ${r.checks.length ? `<div class="check"><h4 class="label">Check</h4><ul>${r.checks.map(c => `<li>${esc(c)}</li>`).join("")}</ul></div>` : ""}
           ${r.notes ? `<h4 class="label">Notes</h4><p class="note">${esc(r.notes)}</p>` : ""}
         </div>
-        <div class="back-foot"><button class="btn-quiet" data-flip>${ICON_FLIP}${prep ? "Show bottle" : "Show glass"}</button></div>
+        <div class="back-foot"><button class="btn-quiet" data-flip>${ICON_FLIP}${prep ? "Show bottle" : `<span class="foot-lead">Show glass: </span><span class="foot-glass">${esc(GLASSES[r.glass].name)}</span>`}</button></div>
       </div>
     </div>
   </article>`;
