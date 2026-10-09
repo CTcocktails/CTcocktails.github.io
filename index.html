@@ -8061,10 +8061,13 @@ function scrollByCard(dir){
   main.scrollBy({ left: dir * step, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
 }
 $("#surprise").addEventListener("click", () => {
-  let cards = [...$("#cards").querySelectorAll(".card")];
+  // Cocktails only: prep and batch cards (bottle) never come up.
+  const BOTTLE = new Set(DRINKS.filter(d => d.glass === "bottle").map(d => d.id));
+  const pool = () => [...$("#cards").querySelectorAll(".card")].filter(c => !BOTTLE.has(c.dataset.id));
+  let cards = pool();
   if (!cards.length){
     state.q = ""; $("#q").value = ""; state.section = "All"; renderChips(); render();
-    cards = [...$("#cards").querySelectorAll(".card")];
+    cards = pool();
   }
   const card = cards[Math.floor(Math.random() * cards.length)];
   const smooth = matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
