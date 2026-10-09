@@ -8120,8 +8120,10 @@ $("#surprise").addEventListener("click", () => {
   }
   showCard(cards[Math.floor(Math.random() * cards.length)]);
 });
-function showCard(card, instant){
-  const smooth = instant || matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+function showCard(card){
+  // Jump straight there. A smooth scroll flies past hundreds of sketched cards,
+  // and doing that a few times in a row can run an iPhone out of memory.
+  const smooth = "auto";
   document.querySelectorAll(".card.picked").forEach(c => c.classList.remove("picked"));
   card.classList.add("picked");
   if (state.view === "deck"){
@@ -8139,7 +8141,7 @@ function openFromHash(){
   state.q = ""; $("#q").value = ""; state.section = "All";
   state.flipped.add(id); renderChips(); render();
   const card = $("#cards").querySelector(`.card[data-id="${CSS.escape(id)}"]`);
-  if (card) requestAnimationFrame(() => showCard(card, true));
+  if (card) requestAnimationFrame(() => showCard(card));
 }
 window.addEventListener("hashchange", openFromHash);
 $("#prev").addEventListener("click", () => scrollByCard(-1));
