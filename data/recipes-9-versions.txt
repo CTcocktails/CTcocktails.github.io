@@ -1,0 +1,5 @@
+# Other versions of drinks that appear earlier. A card with the same name as an
+# earlier one becomes version B, C... of that drink and takes its section.
+# Once you pick a version, delete the others here (or ask Claude to).
+
+@ Versions

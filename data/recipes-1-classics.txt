@@ -1,0 +1,456 @@
+# Recipe source list (part 1). Converted into the app by tools/build_recipes.py.
+# Format:
+#   @ Section
+#   * Name | glass | method | ice | garnish
+#   - ingredient line
+#   > method step
+#   ! note shown on the card
+#   ~ optional tip, shown in italics
+#   ? needs checking (shown on the card under "Needs checking")
+# glass: coupe, wine, collins, dof, gibraltar, shot, bottle
+
+@ Classics
+
+* Old Fashioned | dof | Stirred | Large cube | Orange twist
+- 1 oz Bourbon
+- 1 oz Old Overholt rye
+- 1 barspoon Black tea turbinado syrup
+- 2 dashes Angostura bitters
+> Stir down and serve over a large rock.
+! Menu: House blend of whiskeys, black tea, raw sugar, bitters.
+! Batch (per liter): 15 oz bourbon, 15 oz rye, 2 3/4 oz black tea turbinado syrup, 1/2 oz Angostura. Pour 2 1/2 oz per drink.
+
+* Daiquiri | coupe | Shaken | | Lime wedge
+- 2 oz Rum
+- 1 oz Lime juice
+- 7/8 oz Simple syrup
+> Shake and fine strain into a coupe.
+
+* Margarita | dof | Shaken | Cubes | Half salt rim, lime wedge
+- 2 oz Tequila
+- 1 oz Lime juice
+- 3/4 oz Agave syrup
+> Shake with 4-6 cubes and dirty dump into a half-salt-rimmed glass.
+> Add fresh ice on top. Garnish with a lime wedge.
+! Cadillac Margarita: cut the tequila to 1 1/2 oz and float 1/2 oz cognac (upcharge).
+
+* Paloma | collins | Whip shake | Cubes | Half Tajín rim, lime wedge
+- 2 oz Tequila
+- 1 oz Grapefruit juice
+- 1/2 oz Lime juice
+- 1/2 oz Agave syrup
+- Top Squirt
+> Whip shake and pour into a collins glass with a half Tajín rim.
+> Top with Squirt. Garnish with a lime wedge.
+! The agave is lime leaf agave (see Prep).
+
+* Gimlet | coupe | Shaken | | Lime wedge
+- 2 oz Gin
+- 1 oz Lime juice
+- 7/8 oz Simple syrup
+> Shake and fine strain into a coupe.
+
+* Gold Rush | dof | Shaken | Cubes | Lemon wedge
+- 2 oz Bourbon
+- 3/4 oz Lemon juice
+- 3/4 oz Honey syrup
+> Shake with 4-6 cubes, dirty dump and top with fresh ice.
+
+* Bee's Knees | coupe | Shaken | | Lemon twist
+- 2 oz Gin
+- 3/4 oz Lemon juice
+- 3/4 oz Honey syrup
+> Shake and fine strain into a coupe.
+
+* Whiskey Buck | dof | Shaken | Cubes | Lemon wheel
+- 2 oz Evan Williams bourbon
+- 1 oz Lemon juice
+- 3/4 oz Ginger syrup
+> Short hard shake and strain into a DOF.
+
+* Mexican Firing Squad | dof | Shaken | Cubes | Lime wheel
+- 2 oz Cimarron tequila
+- 3/4 oz Lime juice
+- 3/4 oz Grenadine
+- 2 dashes Angostura bitters
+> Hard short shake and strain into a DOF over fresh rocks.
+
+* Scofflaw | coupe | Shaken | | Lemon twist
+- 2 oz Rye
+- 1 oz Dry vermouth
+- 1/2 oz Grenadine
+- 1/2 oz Lemon juice
+
+* Seelbach | wine | Whip shake | | Lemon twist
+- 1 oz Evan Williams bourbon
+- 1/2 oz Cointreau
+- 4 dashes Angostura bitters
+- 4 dashes Peychaud's bitters
+- Top J. Roget sparkling wine
+> Whip shake with 2 shell ice cubes and strain into a flute.
+> Top with J. Roget.
+! Served in a flute.
+
+* Penicillin #1 | dof | Shaken | Cubes | Lemon wheel
+- 2 oz Blended scotch
+- 1 oz Lemon juice
+- 1/2 oz Honey syrup
+- 3/4 oz Ginger syrup
+> Shake and dirty dump into a DOF.
+
+* Penicillin #2 | dof | Shaken | Cubes | Lemon wheel
+- 2 oz Mezcal
+- 1 oz Lemon juice
+- 1/2 oz Honey syrup
+- 3/4 oz Ginger syrup
+> Shake and dirty dump into a DOF.
+
+* Army & Navy | coupe | Shaken | | Grated cinnamon
+- 2 oz Ford's gin
+- 3/4 oz Orgeat
+- 3/4 oz Lemon juice
+- 1 dash Angostura bitters
+> Shake and double strain into a coupe.
+
+* Fitzgerald | coupe | Shaken | | Dehydrated lemon wheel or lemon twist
+- 2 oz Gin
+- 3/4 oz Lemon juice
+- 3/4 oz Simple syrup
+- 3-4 dashes Angostura bitters
+! Can do 1 oz lemon juice if you like it a little more tart.
+
+* Hanky Panky | coupe | Stirred | |
+- 1 1/2 oz Ford's gin
+- 1 1/2 oz Sweet vermouth
+- 1/4 oz Fernet Branca
+! Nick & Nora.
+
+* Aviation | coupe | Shaken | | Cherry
+- 2 oz Gin
+- 3/4 oz Lemon juice
+- 1/2 oz Maraschino liqueur
+- 1/4 oz Crème de violette
+
+* 20th Century | coupe | Shaken | |
+- 1 1/2 oz Ford's gin
+- 3/4 oz Lillet Blanc
+- 3/4 oz Lemon juice
+- 1/2 oz Crème de cacao
+
+* Sazerac | dof | Stirred | | Skewered lemon twist
+- 1 1/2 oz Old Overholt rye
+- 1/2 oz VS cognac
+- 2 barspoons Gum syrup
+- 1 dash Angostura bitters
+- 4 dashes Peychaud's bitters
+- Rinse St. George absinthe
+> Rinse an old fashioned glass with absinthe.
+> Stir and strain into the glass, served neat.
+
+* Fall Sazerac | dof | Stirred | | Orange twist, flamed absinthe spray
+- 1 1/2 oz Applejack
+- 1/2 oz Rittenhouse rye
+- 3/8 oz Honey syrup
+- 3 dashes Creole bitters
+- 2 dashes Cherry bark vanilla bitters
+! Batched, 2 1/2 oz pour.
+
+* House Manhattan | coupe | Stirred | | Orange swath (discarded), cherry
+- 2 oz Rittenhouse rye
+- 1 oz Sweet vermouth blend
+- 3 dashes Angostura bitters
+
+* Old Cuban | coupe | Shaken | | Mint leaf
+- 1 1/2 oz Rum
+- 3/4 oz Lime juice
+- 3/4 oz Simple syrup
+- 4 Mint leaves
+- 3 dashes Angostura bitters
+- Top Wycliff sparkling wine
+
+* Gin Gin Mule | collins | Shaken | Cubes | Mint top
+- 1 1/2 oz Damrak gin
+- 3/4 oz Ginger syrup
+- 3/4 oz Lime juice
+- 2 dashes Angostura bitters
+- Top Soda (splash)
+
+* Lion's Tail | coupe | Shaken | |
+- 2 oz Bourbon
+- 1/2 oz Lime juice
+- 1/2 oz Pimento dram
+- 2 barspoons Gomme syrup
+
+* Old Pal | coupe | Stirred | |
+- 2 oz Old Overholt rye
+- 1/2 oz Gran Classico
+- 1/2 oz Aperol
+- 1/2 oz Dolin dry vermouth
+
+* Blackthorn | coupe | Stirred | | Absinthe mist
+- 2 oz Redbreast 12 yr
+- 3/4 oz Sweet vermouth
+- 1/4 oz Maraschino liqueur
+- 1 dash Absinthe
+- 2 dashes Angostura bitters
+
+* Algonquin | coupe | Shaken | | Cherry
+- 2 oz Rye
+- 1 oz Pineapple juice
+- 1/2 oz Dolin dry vermouth
+- 1/2 oz Averna
+- 1/2 oz Maraschino liqueur
+
+* Monte Carlo | dof | Stirred | Cubes | Lemon peel
+- 2 oz Rye
+- 1/2 oz Bénédictine
+- 6 dashes Angostura bitters
+
+* Greenpoint | coupe | Stirred | | Lemon peel
+- 2 oz Rye
+- 1/2 oz Yellow Chartreuse
+- 1/2 oz Sweet vermouth
+- 3 dashes Angostura bitters
+- 3 dashes Orange bitters
+
+* Poet's Dream | coupe | Stirred | | Lemon peel
+- 2 oz Gin
+- 3/4 oz Dry vermouth
+- 1/4 oz Bénédictine
+- 6 dashes Orange bitters
+
+* Alaska | coupe | Stirred | | Lemon peel
+- 2 1/2 oz Gin
+- 1/2 oz Yellow Chartreuse
+- 6 dashes Orange bitters
+
+* Star Daisy | coupe | Shaken | | Lemon wedge, cherry
+- 3/4 oz Gin
+- 3/4 oz Apple brandy
+- 1 oz Curaçao
+- 3/4 oz Lemon juice
+
+* Daisy | coupe | Shaken | | Orange peel
+- 2 oz Vodka
+- 1/2 oz Curaçao (or flavored liqueur)
+- 1/2 oz Grenadine (or simple)
+- 3/4 oz Lemon juice
+
+* Cosmopolitan | coupe | Shaken | | Lime wedge
+- 1 1/2 oz Boomsma young genever
+- 3/4 oz Cranberry liqueur
+- 1/2 oz Curaçao
+- 1/2 oz Lime juice
+- 1/4 oz Simple syrup
+
+* French 75 | collins | Whip shake | Cubes | Lemon peel
+- 1 oz Gin
+- 1 oz Cognac
+- 3/4 oz Lemon juice
+- 3/4 oz Simple syrup
+- Top Sparkling wine
+
+* Hemingway Daiquiri | coupe | Shaken | | Lime wedge
+- 2 oz White rum
+- 1 oz Grapefruit juice
+- 1/2 oz Lime juice
+- 1/2 oz Maraschino liqueur
+- 1/4 oz Simple syrup
+
+* Long Island Iced Tea | collins | Shaken | Cubes | Lemon wedge
+- 1/2 oz Vodka
+- 1/2 oz Gin
+- 1/2 oz Rum
+- 1/2 oz Curaçao
+- 3/4 oz Lemon juice
+- 3/4 oz Simple syrup
+- Top Soda
+- Float Amaro Lucano
+
+* Hotel Nacional | coupe | Shaken | | Lime wedge
+- 2 oz Rum
+- 3/4 oz Lime juice
+- 1/2 oz Apricot liqueur
+- 1/2 oz Pineapple syrup
+- 2 dashes Angostura bitters
+> Shake and fine strain into a coupe.
+! Batch (per liter): 1 bottle Saison rum, 6 1/2 oz apricot liqueur.
+
+* Pisco Punch | coupe | Shaken | | Lemon twist
+- 2 oz Pisco
+- 3/4 oz Lemon juice
+- 3/4 oz Pineapple syrup
+- 1-2 dashes Angostura bitters
+> Shake and fine strain into a coupe.
+
+* Pisco Sour | coupe | Shaken (dry + wet) | | Angostura
+- 2 oz Pisco
+- 1 oz Lemon juice
+- 3/4 oz Simple syrup
+- 1 Egg white
+
+* New York Sour | dof | Whip shake | Cubes | Lemon wheel
+- 1 3/4 oz Bourbon
+- 1 oz Lemon juice
+- 3/4 oz Simple syrup
+- Float Red wine
+> Whip shake (or full shake) and top with red wine.
+
+* Aperol Spritz | wine | Built | Cubes | Orange slice
+- 3 oz Prosecco
+- 2 oz Aperol
+- 1 oz Soda
+> Fill a wine glass with ice and add the prosecco and soda.
+~ Pro move: add the Aperol last and stir it in from top to bottom.
+! Ratio: 3 parts prosecco, 2 parts Aperol, 1 part soda. White wine glass.
+
+* Jungle Bird | dof | Shaken | Cubes | No garnish
+- 1 1/2 oz Blackstrap rum, preferably Cruzan
+- 1 1/2 oz Pineapple juice
+- 3/4 oz Campari
+- 1/2 oz Lime juice
+- 1/2 oz Simple syrup
+
+* Barbary Coast | coupe | Shaken | | Grated nutmeg
+- 3/4 oz Scotch
+- 3/4 oz Gin
+- 3/4 oz Cream
+- 3/4 oz Crème de cacao
+
+* Angostura Fizz | collins | Shaken (dry + wet) | Cubes |
+- 1 oz Angostura amaro
+- 1 oz Lime juice
+- 1/4 oz Simple syrup
+- 1/4 oz Grenadine
+- 1/2 oz Cream
+- 1 Egg white
+- Top Soda
+! Idea: sub any ripping dry amaro for the Angostura amaro (Maria al Monte? Fernet Vallet?).
+
+* Brandy Crusta | coupe | Shaken | |
+- 2 oz Cognac or brandy
+- 3/4 oz Lemon juice
+- 1/2 oz Orange curaçao
+- 1/2 oz Maraschino liqueur
+- 1 dash Angostura bitters
+
+* Ward 8 | coupe | Shaken | |
+- 2 oz Rye
+- 1/2 oz Lemon juice
+- 1/4 oz Orange juice
+- 1 barspoon Grenadine
+
+* Bennett | coupe | Shaken | |
+- 2 oz Gin
+- 3/4 oz Lime juice
+- 3/4 oz Simple syrup
+- 2 dashes Angostura bitters
+
+* Martinez | coupe | Stirred | |
+- 1 1/2 oz Gin
+- 1 1/2 oz Sweet vermouth
+- 1 tsp Maraschino liqueur
+- 2 dashes Angostura bitters
+- 1 dash Absinthe
+
+* Mary Pickford | coupe | Shaken | |
+- 1 1/2 oz Rum
+- 1 oz Pineapple juice
+- 1/4 oz Grenadine
+- 1/4 oz Maraschino liqueur
+- 1/4 oz Lime juice
+
+* Bijou | coupe | Stirred | |
+- 3/4 oz Plymouth gin
+- 3/4 oz Green Chartreuse
+- 3/4 oz Carpano Antica
+- 1 dash Angostura orange bitters
+- 1 dash Regans' orange bitters
+
+* Remember the Maine | coupe | Stirred | |
+- 2 oz Rye
+- 3/4 oz Carpano Antica
+- 1/4 oz Cherry Heering
+- 1 barspoon Absinthe
+
+* Corpse Reviver #2 | coupe | Shaken | | 
+- 3/4 oz Gin
+- 3/4 oz Cocchi Americano
+- 3/4 oz Dry curaçao
+- 3/4 oz Lemon juice
+
+* Yellow Daisy | coupe | Shaken | | Lemon twist
+- 1 1/2 oz Gin
+- 1 1/2 oz Dolin dry vermouth
+- 3/4 oz Grand Marnier
+- 1/4 oz Absinthe
+
+* Rattlesnake | coupe | Shaken (dry + wet) | |
+- 2 oz Sazerac rye
+- 3/4 oz Lemon juice
+- 3/4 oz Simple syrup
+- 1 Egg white
+- 2 dashes Absinthe
+
+* Brown Derby | coupe | Shaken | |
+- 2 oz Bourbon
+- 1 oz Grapefruit juice
+- 1/2 oz Honey syrup
+- 1/4 oz Lemon juice
+
+* IBF Pick-Me-Up | wine | Built | | Lemon twist
+- 1 oz Brandy
+- 1/4 oz Fernet Branca
+- 1/4 oz Dry curaçao
+- Top Champagne
+
+* 19th Century | coupe | Shaken | | Lemon twist
+- 1 1/2 oz Bourbon
+- 3/4 oz Lillet Rouge
+- 3/4 oz Lemon juice
+- 1/2 oz Crème de cacao
+
+* Pegu Club | coupe | Shaken | |
+- 1 1/2 oz Gin
+- 1/2 oz Cointreau
+- 3/4 oz Lime juice
+- 1 dash Angostura bitters
+
+* Juschu | coupe | Shaken | | Lime wheel
+- 2 oz El Jimador tequila
+- 3/4 oz Lime juice
+- 3/4 oz Honey syrup
+- 2 dashes Angostura bitters
+> Shake and double strain into a coupe.
+
+* Cienfuegos Shake | coupe | Shaken | | Dehydrated lime wheel
+- 2 oz El Dorado 5 rum
+- 1/2 oz Bénédictine
+- 1 oz Lime juice
+- 3/4 oz Simple syrup
+- 6-7 Mint leaves
+- 3 dashes Angostura bitters
+> Muddle, shake and double strain into a coupe.
+
+* Veterano | dof | Stirred | Large cube | Orange twist
+- 1 1/2 oz Añejo tequila
+- 1/2 oz Bacardi rum
+- 1/2 oz Yellow Chartreuse
+- 1/2 oz Grenadine
+- 1 Orange peel, torn in half
+> Stir 8-10 seconds and strain over a big rock.
+> Add 1 oz soda.
+
+* Ritz of New York | wine | Whip shake | | Orange twist
+- 1 oz Hennessy cognac
+- 1/2 oz Clément Créole Shrubb
+- 1/4 oz Lemon juice
+- 1/4 oz Maraschino liqueur
+- Top Cava
+> Whip shake, double strain into a flute and top with cava.
+
+* Baby's First Bourbon | dof | Shaken | Cubes | Lemon wheel
+- 2 oz Bourbon
+- 3/4 oz Lemon juice
+- 3/4 oz Orgeat
+- 2-3 dashes Angostura bitters
