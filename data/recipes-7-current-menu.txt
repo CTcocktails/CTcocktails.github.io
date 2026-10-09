@@ -81,13 +81,13 @@
 
 @ Gin
 
-* Pink Pony | collins | Shaken | Cubes |
+* Pink Pony | collins | Shaken | Cubes | 1 dash Angostura, lime wedge
 - 1 1/2 oz Gin
 - 1/2 oz Grenadine
-- 3/4 oz Ginger syrup
-- 1/2 oz Lime juice
-- Top Soda
-> Shake, strain over fresh ice in a collins glass and top with soda.
+- 1/2 oz Ginger syrup
+- 3/4 oz Lime juice
+- Top Ginger beer
+> Shake, strain over fresh ice in a collins glass and top with ginger beer.
 
 * Summer Trip | coupe | Shaken (wet + dry) | | No garnish
 - 1 1/2 oz Monopolowa gin
