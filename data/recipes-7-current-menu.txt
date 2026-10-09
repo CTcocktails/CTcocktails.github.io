@@ -508,11 +508,11 @@
 
 @ Batches
 
-* Strawberry Monthly | bottle | Batch | |
+* Strawberry Monthly Batch | bottle | Batch | |
 - 750 ml Strawberry vodka
 - 250 ml Apero
 
-* Disco Punch | bottle | Batch | |
+* Disco Punch Batch | bottle | Batch | |
 - 750 ml Pisco
 - 250 ml Lillet Rouge
 
@@ -520,60 +520,60 @@
 - 25 oz Gin
 - 8 oz Grenadine
 
-* Cinn-ister | bottle | Batch | |
+* Cinn-ister Batch | bottle | Batch | |
 - 72 oz 1800 & Gran Centenario reposado tequila
 - 24 oz Lo-Fi gentian amaro
 ! 3 liter batch. Day of the Dead menu.
 
-* Honeydew Vesper | bottle | Batch | |
+* Honeydew Vesper Batch | bottle | Batch | |
 - 16 1/2 oz Honeydew-infused gin
 - 11 oz Nat Kidder vodka
 - 5 1/2 oz Citrange amaro
 
-* Passion Play | bottle | Batch | |
+* Passion Play Batch | bottle | Batch | |
 - 1 liter Vodka
 - 16 1/2 oz Chinola
 - 16 1/2 oz Apero
 ! 2 liter batch.
 
-* Love Hurts | bottle | Batch | |
+* Love Hurts Batch | bottle | Batch | |
 - 13 oz Overproof Pueblo Viejo tequila
 - 19 1/2 oz Thatcher's prickly pear
 - 13 oz Curaçao blend
 ! 2 liter batch.
 
-* Tom Khallins | bottle | Batch | |
+* Tom Khallins Batch | bottle | Batch | |
 - 28 oz Gin
 - 4 oz Elderflower liqueur
 
-* Passion Daiquiri | bottle | Batch | |
+* Passion Daiquiri Batch | bottle | Batch | |
 - 18 oz Well rum
 - 6 oz Park cognac
 ! Per 750 ml bottle.
 
-* Blood Orange Daiquiri | bottle | Batch | |
+* Blood Orange Daiquiri Batch | bottle | Batch | |
 - 16 oz Mommenpop blood orange
 - 16 oz Saison rum
 ! Meant to be the base of a traditional daiquiri spec: lower ABV and more seasonal.
 
-* Pretty in Pink | bottle | Batch | |
+* Pretty in Pink Batch | bottle | Batch | |
 - 13 oz Nat Kidder vodka
 - 13 oz Mommenpop grapefruit
 - 6 1/2 oz Aperol
 ! Refrigerate the Mommenpop after opening.
 
-* Spring Fling | bottle | Batch | |
+* Spring Fling Batch | bottle | Batch | |
 - 16 1/2 oz Cihuatán Indigo rum
 - 8 1/4 oz Lillet Blanc
 - 8 1/4 oz Strawberry rosemary syrup
 
-* Slow Dive | bottle | Batch | |
+* Slow Dive Batch | bottle | Batch | |
 - 19 1/2 oz Ford's gin
 - 6 1/2 oz Cinnamon syrup
 - 6 1/2 oz Aperol
 ! March monthly.
 
-* Christmas Gin | bottle | Batch | |
+* Christmas Gin Batch | bottle | Batch | |
 - 16 1/2 oz Gin
 - 5 1/2 oz Aperol
 - 4 1/4 oz Cherry syrup
@@ -582,24 +582,24 @@
 ! This is a liter batch spec. For a single serving, add lemon (sour spec) and shake.
 ! Or make it a punch: add some citrus and water or oleo saccharum. Throw some rosemary in it if it's a Christmas punch.
 
-* July Monthly (Gin) | bottle | Batch | |
+* July Monthly Batch (Gin) | bottle | Batch | |
 - 16 1/4 oz Gin
 - 9 3/4 oz Midori
 - 3 1/4 oz Bitter bianco
 - 3 1/4 oz Dry vermouth
 
-* June Monthly | bottle | Batch | |
+* June Monthly Batch | bottle | Batch | |
 - 13 oz Tequila
 - 13 oz Lillet Blanc
 - 3 1/4 oz Peach liqueur
 - 3 1/4 oz Simple syrup
 
-* Neon Baby | bottle | Batch | |
+* Neon Baby Batch | bottle | Batch | |
 - 24 oz Ford's gin
 - 6 oz Fiero aperitif
 - 3 oz Giffard lychee
 
-* Citrus Banana Rum (unnamed) | bottle | Batch | |
+* Citrus Banana Rum Batch (unnamed) | bottle | Batch | |
 - 16 1/2 oz Jade Cihuatán rum
 - 11 oz Upcycled citrus cordial
 - 5 1/2 oz Giffard Banane du Brésil
