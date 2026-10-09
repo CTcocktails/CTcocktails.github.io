@@ -103,13 +103,15 @@ def main():
             "<meta name=\"mobile-web-app-capable\" content=\"yes\">\n"
             "<meta name=\"apple-mobile-web-app-status-bar-style\" content=\"black\">\n"
             "<meta name=\"apple-mobile-web-app-title\" content=\"CT Codex\">\n"
-            "<link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"apple-touch-icon.png\">\n"
-            "<link rel=\"apple-touch-icon-precomposed\" sizes=\"180x180\" href=\"apple-touch-icon-precomposed.png\">\n"
-            "<link rel=\"icon\" type=\"image/png\" sizes=\"192x192\" href=\"icon-192.png\">\n"
-            "<link rel=\"manifest\" href=\"manifest.webmanifest\">\n"
+            "<title>CT Codex</title>\n"
+            "<link rel=\"apple-touch-icon\" href=\"https://ctcocktails.github.io/apple-touch-icon.png\">\n"
+            "<link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"https://ctcocktails.github.io/apple-touch-icon.png\">\n"
+            "<link rel=\"apple-touch-icon-precomposed\" sizes=\"180x180\" href=\"https://ctcocktails.github.io/apple-touch-icon-precomposed.png\">\n"
+            "<link rel=\"icon\" type=\"image/png\" sizes=\"192x192\" href=\"https://ctcocktails.github.io/icon-192.png\">\n"
+            "<link rel=\"manifest\" href=\"https://ctcocktails.github.io/manifest.webmanifest\">\n"
             "<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}"
             "body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>\n"
-            "</head>\n<body>\n" + html + "\n</body>\n</html>\n")
+            "</head>\n<body>\n" + re.sub(r"<title>.*?</title>\n?", "", html, count=1) + "\n</body>\n</html>\n")
     open(os.path.join(ROOT, "index.html"), "w", encoding="utf-8").write(site)
 
     flagged = [r for r in recipes if r["checks"]]
