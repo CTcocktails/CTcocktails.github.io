@@ -58,6 +58,9 @@ header.top { position: relative; }
 .share:active { transform: scale(.94); }
 .toast { position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translate(-50%, 12px); background: var(--ink); color: var(--bg); padding: 10px 16px; border-radius: 999px; font-size: .9rem; font-weight: 700; opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; z-index: 50; }
 .toast.show { opacity: 1; transform: translate(-50%, 0); }
+.to-top { position: fixed; right: 16px; bottom: calc(20px + env(safe-area-inset-bottom, 0px)); z-index: 40; width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--line); background: var(--paper); color: var(--ink); box-shadow: var(--shadow); display: grid; place-items: center; cursor: pointer; opacity: 0; transform: translateY(12px); pointer-events: none; transition: opacity .2s, transform .2s; }
+.to-top.show { opacity: 1; transform: none; pointer-events: auto; }
+.to-top svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 @media (min-width: 760px) { .share { position: static; order: 3; width: 36px; height: 36px; margin-left: -4px; } .brand { padding-right: 0; margin-right: auto; } }
 
 .seg { display: inline-flex; background: var(--paper-2); border: 1px solid var(--line); border-radius: 999px; padding: 3px; }
@@ -8121,6 +8124,16 @@ $("#next").addEventListener("click", () => scrollByCard(1));
 
 setPressed("#v-deck", "#v-grid", state.view === "deck");
 setPressed("#u-oz", "#u-ml", state.unit === "oz");
+// Back to top: appears once you've scrolled down a screen or so.
+const toTop = document.createElement("button");
+toTop.className = "to-top"; toTop.setAttribute("aria-label", "Back to top");
+toTop.innerHTML = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>`;
+document.body.appendChild(toTop);
+toTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }));
+const syncTop = () => toTop.classList.toggle("show", window.scrollY > Math.max(500, innerHeight * 0.8));
+window.addEventListener("scroll", syncTop, { passive: true });
+syncTop();
+
 renderChips();
 render();
 openFromHash();
