@@ -95,6 +95,11 @@ def main():
     html = html[:a] + "\n" + js(recipes) + html[b:]
     open(HTML, "w", encoding="utf-8").write(html)
 
+    # The home screen icon is embedded in the page so the phone never has to fetch it.
+    import base64
+    TOUCH_ICON = "data:image/png;base64," + base64.b64encode(
+        open(os.path.join(ROOT, "apple-touch-icon.png"), "rb").read()).decode()
+
     # Standalone copy for GitHub Pages (the Claude viewer adds this skeleton itself).
     site = ("<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n"
             "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1,viewport-fit=cover\">\n"
@@ -104,8 +109,7 @@ def main():
             "<meta name=\"apple-mobile-web-app-status-bar-style\" content=\"black\">\n"
             "<meta name=\"apple-mobile-web-app-title\" content=\"CT Codex\">\n"
             "<title>CT Codex</title>\n"
-            "<link rel=\"apple-touch-icon\" href=\"https://ctcocktails.github.io/apple-touch-icon.png\">\n"
-            "<link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"https://ctcocktails.github.io/apple-touch-icon.png\">\n"
+            "<link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"" + TOUCH_ICON + "\">\n"
             "<link rel=\"apple-touch-icon-precomposed\" sizes=\"180x180\" href=\"https://ctcocktails.github.io/apple-touch-icon-precomposed.png\">\n"
             "<link rel=\"icon\" type=\"image/png\" sizes=\"192x192\" href=\"https://ctcocktails.github.io/icon-192.png\">\n"
             "<link rel=\"manifest\" href=\"https://ctcocktails.github.io/manifest.webmanifest\">\n"
