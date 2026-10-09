@@ -7940,6 +7940,21 @@ function sections(){
   for (const r of DRINKS) if (r.section) m.set(r.section, (m.get(r.section) || 0) + 1);
   return [...m.entries()];
 }
+// Rank search results so the closest match comes first: the drink's own name, then
+// ingredients that contain the whole phrase, then anything else that matched.
+function relevance(r){
+  const q = state.q.toLowerCase().trim().replace(/\s+/g, " ");
+  if (!q) return 0;
+  const name = r.name.toLowerCase(), words = q.split(" ");
+  if (name === q) return 100;
+  if (name.startsWith(q)) return 90;
+  if (new RegExp("\\b" + q.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).test(name)) return 80;
+  if (name.includes(q)) return 70;
+  if (words.every(w => name.includes(w))) return 60;
+  if (r.ing.some(x => x.i.toLowerCase().includes(q))) return 40;
+  if (words.some(w => name.includes(w))) return 20;
+  return 0;
+}
 function matches(r){
   if (state.section === CHECK){ if (!r.checks.length) return false; }
   else if (state.section === COMPARE){ if (!r.version) return false; }
@@ -8003,7 +8018,7 @@ function renderChips(){
 
 function render(){
   const main = $("#cards");
-  const list = DRINKS.filter(matches).sort((a, b) => a.name.localeCompare(b.name) || a.version.localeCompare(b.version));
+  const list = DRINKS.filter(matches).sort((a, b) => (state.q ? relevance(b) - relevance(a) : 0) || a.name.localeCompare(b.name) || a.version.localeCompare(b.version));
   const total = DRINKS.length;
   $("#shown").textContent = list.length === total ? `${total} recipe${total === 1 ? "" : "s"}` : `${list.length} of ${total} recipes`;
   $("#deck-nav").hidden = state.view !== "deck" || list.length < 2;
